@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace MurmanRyb
 {
-    public partial class Form1 : Form
+    public partial class CustomerAdminForm : Form
     {
-        public Form1()
+        public CustomerAdminForm()
         {
             InitializeComponent();
+        }
+
+        private void CustomerAdminForm_Load(object sender, EventArgs e)
+        {
+            DBConnection.GetCustomerList();
+            dataGridView1.DataSource = DBConnection.dtCustomers;
         }
     }
 }
